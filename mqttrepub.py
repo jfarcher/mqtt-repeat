@@ -1,5 +1,6 @@
 #!/usr/bin/python
-import mosquitto
+#import mosquitto
+import paho.mqtt.client as mqtt
 import sys
 import time
 topic = "test"
@@ -11,11 +12,11 @@ def on_connect(mosq,obj,rc):
 
 def on_message(mosq,obj,msg):
    message= msg.payload
-   mqtt2 = mosquitto.Mosquitto()
+   mqtt2 = mqtt.Client()
    mqtt2.connect(dbroker, 1883, 60)
    mqtt2.publish(topic, message)
 
-mqttc = mosquitto.Mosquitto()
+mqttc = mqtt.Client()
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 mqttc.connect(sbroker, 1883, 60)
