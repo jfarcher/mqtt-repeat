@@ -12,8 +12,8 @@
 
 # Script Location & informations
 DIR=/store/projects/mqtt-repeat
-DAEMON=$DIR/mqttrepeat.py
-DAEMON_NAME=mqttrepeat
+DAEMON=$DIR/mqttrepub.py
+DAEMON_NAME=mqttrepub
 
 # This next line determines what user the script runs as.
 DAEMON_USER=root
